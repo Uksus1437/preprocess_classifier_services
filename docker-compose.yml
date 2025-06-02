@@ -1,0 +1,22 @@
+services:
+  preprocessor:
+    build:
+      context: .
+      dockerfile: Dockerfile_preprocessor
+    container_name: titanic-preprocessor
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./data:/app/data
+    restart: on-failure
+
+  classifier:
+    build:
+      context: .
+      dockerfile: Dockerfile_classifier
+    container_name: titanic-classifier
+    volumes:
+      - ./data:/app/data
+    depends_on:
+      - preprocessor
+    restart: on-failure

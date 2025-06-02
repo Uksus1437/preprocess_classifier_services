@@ -1,0 +1,2 @@
+Survived,Sex,Age,SibSp,Parch,Fare,Embarked_C,Embarked_Q,Embarked_S,Pclass_1,Pclass_2,Pclass_3
+0,1,30,0,0,10.0,0,0,True,0,0,True
